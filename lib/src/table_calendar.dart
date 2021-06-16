@@ -525,7 +525,10 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
                 behavior: widget.dayHitTestBehavior,
                 onTap: () => _onDayTapped(day),
                 onLongPress: () => _onDayLongPressed(day),
-                child: _buildCell(day, focusedMonth),
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: _buildCell(day, focusedMonth),
+                ),
               );
             },
           ),
